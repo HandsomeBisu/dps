@@ -1,0 +1,139 @@
+body {
+    background-color: #1a1a1a;
+    color: #FFFFFF;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+.image-container {
+    width: 100%;
+    min-height: 150px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.image-container img {
+    position: absolute;
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.image-container img.active {
+    opacity: 1;
+}
+
+#logo {
+    width: 120px;
+}
+
+#logo.active {
+    /* Animation is only active when the logo is fully visible and not fading out */
+    animation: float 3s ease-in-out infinite;
+}
+
+/* New class to handle the logo's special fade-out */
+#logo.logo-fade-out {
+    opacity: 0;
+    /* We keep the .active class on it temporarily so the animation continues during the fade */
+}
+
+#banner {
+    max-width: 100%;
+    width: 500px;
+}
+
+h1 {
+    font-size: 3.5em;
+    margin: 0;
+    background: linear-gradient(45deg, #0000FF, #1E90FF, #00E5FF, #87CEEB);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    word-break: keep-all;
+}
+
+a {
+    color: #87CEEB;
+}
+
+p {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+small {
+    margin-top: 20px;
+    color: #ccc;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+
+    .image-container {
+        min-height: 100px;
+        margin-bottom: 20px;
+    }
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
