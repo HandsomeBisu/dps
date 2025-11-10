@@ -1,41 +1,24 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburgerMenu = document.getElementById('hamburger-menu');
-    const navLinks = document.getElementById('nav-links');
+// Custom JavaScript will go here
 
-    if (hamburgerMenu && navLinks) {
-        hamburgerMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    }
+// Initialize AOS
+AOS.init();
 
-    // Ticker animation
-    const tickerTrack = document.querySelector('.ticker-track');
-    if (tickerTrack) {
-        const originalItems = Array.from(tickerTrack.children);
-        // Duplicate items ONCE to create a seamless loop (A-A structure)
-        originalItems.forEach(item => {
-            const clone = item.cloneNode(true);
-            tickerTrack.appendChild(clone);
-        });
+// Custom JavaScript will go here
 
-        // Dynamic animation based on precise width
-        // This avoids CSS percentage rounding errors that can cause jerks
-        const scrollWidth = tickerTrack.scrollWidth / 2; // Width of one set of items
-        const animationName = 'ticker-scroll-dynamic';
-        const animationDuration = 15; // User's preferred duration
+// Initialize AOS
+AOS.init();
 
-        const styleSheet = document.createElement('style');
-        styleSheet.type = 'text/css';
-        styleSheet.innerText = `
-            @keyframes ${animationName} {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(-${scrollWidth}px); }
+// Navbar scroll effect
+document.addEventListener('DOMContentLoaded', function () {
+    const navbarContainer = document.querySelector('.navbar.fixed-top .container');
+
+    if (navbarContainer) {
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 50) {
+                navbarContainer.classList.add('container-scrolled');
+            } else {
+                navbarContainer.classList.remove('container-scrolled');
             }
-        `;
-        document.head.appendChild(styleSheet);
-
-        tickerTrack.style.animation = `${animationName} ${animationDuration}s linear infinite`;
-        // Add hardware acceleration hint
-        tickerTrack.style.willChange = 'transform';
+        });
     }
 });

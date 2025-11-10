@@ -1,0 +1,165 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.hero-section {
+    background: linear-gradient(to bottom, #404EED, #23272a);
+    background-size: cover;
+}
+
+#features.bg-light {
+    background-color: #f6f9fc !important;
+    color: #23272a;
+}
+
+#features.bg-light h2, #features.bg-light h3 {
+    color: #23272a;
+}
+
+.btn-primary {
+    background-color: #5865F2;
+    border-color: #5865F2;
+}
+
+.btn-primary:hover {
+    background-color: #4752C4;
+    border-color: #4752C4;
+}
+
+.btn-light {
+    background-color: #ffffff;
+    color: #23272a;
+}
+
+.btn-light:hover {
+    background-color: #f6f9fc;
+}
+
+.btn-dark {
+    background-color: #23272a;
+    color: #ffffff;
+}
+
+.btn-dark:hover {
+    background-color: #3a3f42;
+}
+
+.navbar-dark .navbar-brand {
+    font-weight: 700;
+}
+
+.bg-dark {
+    background-color: #23272a !important;
+}
+
+.navbar.fixed-top {
+    background-color: transparent !important;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar.fixed-top .container {
+    transition: all 0.4s ease-in-out;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.navbar.fixed-top .container-scrolled {
+    max-width: 950px !important;
+    background-color: #1e2124;
+    border-radius: 50em;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.display-5, .display-3 {
+    font-weight: 800 !important;
+}
+
+.main-footer {
+    background-color: #23272a;
+}
+
+.footer-column-title {
+    color: #5865F2;
+    font-weight: 600;
+}
+
+.footer-link {
+    color: #fff;
+    text-decoration: none;
+    line-height: 2;
+}
+
+.footer-link:hover {
+    color: #5865F2;
+    text-decoration: underline;
+}
+
+.main-footer .bi {
+    font-size: 1.5rem;
+    transition: color 0.2s;
+}
+
+.main-footer .bi:hover {
+    color: #5865F2;
+}
+
+.navbar-nav .dropdown-menu {
+    background-color: #23272a;
+    border-radius: 0.5rem;
+}
+
+.navbar-nav .dropdown-item {
+    color: #fff;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background-color: #5865F2;
+    color: #fff;
+}
+
+/* Dropdown on hover */
+@media (min-width: 992px) {
+    .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* Discord-like styling */
+.navbar-nav .dropdown-menu {
+    background-color: #1e1f22; /* Darker background for dropdown */
+    border: none;
+    border-radius: 0.5rem; /* More rounded corners */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4); /* More pronounced shadow */
+    padding: 1rem 0; /* Increased padding for a larger feel */
+    margin-top: 0.5rem; /* Add some space from the navbar */
+    min-width: 12rem; /* Set a minimum width */
+    
+    /* Animation */
+    opacity: 0;
+    visibility: hidden;
+    display: block;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+.navbar-nav .dropdown-item {
+    color: #dcddde; /* Light grey text */
+    padding: 0.75rem 1.5rem; /* Increased padding for items */
+    font-size: 1rem; /* Slightly larger font */
+}
+
+.navbar-nav .dropdown-item:hover {
+    background-color: #424549; /* Darker grey on hover */
+    color: #fff;
+}
+
+.navbar-nav .dropdown-toggle::after {
+    color: #dcddde; /* Dropdown arrow color */
+}
+
+section {
+    margin-bottom: 3rem; /* Add more space between sections */
+}
+
+
